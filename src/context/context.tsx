@@ -8,6 +8,10 @@ export type LoginContextType = {
   logout: () => void;
 };
 
+// 1) create a context object
+
+// initualising and exporting context
+
 export const LoginContext: React.Context<LoginContextType> =
   createContext<LoginContextType>({
     user: {
@@ -18,3 +22,5 @@ export const LoginContext: React.Context<LoginContextType> =
     login: () => {},
     logout: () => {},
   });
+
+// now go to App to recieve context
