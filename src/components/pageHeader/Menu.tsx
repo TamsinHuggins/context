@@ -7,8 +7,8 @@ import {
 import { useContext } from "react";
 
 const Menu = (): JSX.Element => {
+  //  14 render the sign in button only if user is not logged in.
   const contextPointer = useContext<LoginContextType>(LoginContext);
-
   const userDetails: UserType = contextPointer.user;
 
   return (
@@ -19,7 +19,7 @@ const Menu = (): JSX.Element => {
       <li>
         <Link to="/add">New transaction</Link>
       </li>
-
+      {/* 13 create a link to signin */}
       <li>
         {userDetails.id === 0 ? (
           <Link to="/signin">Sign in</Link>

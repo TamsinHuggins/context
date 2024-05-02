@@ -3,11 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { LoginContext, LoginContextType } from "../../context/context";
 
 const SignIn = (): JSX.Element => {
+  // 7 local variable that points to global context.
   const contextPointer = useContext<LoginContextType>(LoginContext);
+
+  // 8 ability to navigate from the router
   const navigate = useNavigate();
 
+  // 9 function that accesses the global login
   const handleLogin = (): void => {
     contextPointer.login({ id: 1, name: "John Doe", role: "admin" });
+
+    //10 nagivate to home
     navigate("/");
   };
   return (
@@ -17,5 +23,7 @@ const SignIn = (): JSX.Element => {
     </>
   );
 };
+
+// 11 go back to App and create a route for this.
 
 export default SignIn;
